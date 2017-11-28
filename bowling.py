@@ -23,10 +23,8 @@ def point_in_frame(game, i, last, frame, result):
     else:
         result += point(game[i])
     if frame < 10 and point(game[i]) == 10:
-        if game[i] == '/':
-            result += point(game[i+1])
-        else:
-            result += point(game[i+1])
+        result += point(game[i+1])
+        if game[i] != '/':
             if game[i+2] == '/':
                 result += 10 - point(game[i+1])
             else:
